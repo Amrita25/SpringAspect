@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+
+	<aop:aspectj-autoproxy />
+
+	<bean id="circle" class="com.spring.aspect.model.Circle">
+		<property name="name" value="Inside Circle"/>
+	</bean>
+
+	<bean id="triangle" class="com.spring.aspect.model.Traingle">
+		<property name="name" value="Inside Traingle"/>
+	</bean>
+	
+	<bean id="loggingservice" class="com.spring.aspect.service.LoggingService">
+	<property name="circle"  ref="circle"/>
+	<property name="triangle"  ref="triangle"/>
+	</bean>
+	
+	<bean id="loggingAdvice" class="com.spring.aspect.advice.LoggingAdvice"/>
+	
+	
+
+</beans>
