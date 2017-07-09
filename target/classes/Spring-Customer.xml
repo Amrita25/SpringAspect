@@ -8,7 +8,6 @@
 	<aop:aspectj-autoproxy />
 
 	<bean id="circle" class="com.spring.aspect.model.Circle">
-		<property name="name" value="Inside Circle"/>
 	</bean>
 
 	<bean id="triangle" class="com.spring.aspect.model.Traingle">

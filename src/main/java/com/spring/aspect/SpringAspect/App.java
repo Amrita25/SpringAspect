@@ -15,6 +15,13 @@ public class App
     {
     	ApplicationContext appContext = new ClassPathXmlApplicationContext("Spring-Customer.xml");
     	LoggingService loggingservice= appContext.getBean("loggingservice",LoggingService.class);
-    	loggingservice.getCircle().getName();
+
+    	//System.out.println(loggingservice.getCircle().getName());
+    	//loggingservice.getCircle().setName("amrita");
+    	//loggingservice.getTriangle().getName();
+    	//loggingservice.getCircle().print("abc");
+    	//loggingservice.getCircle().setNameandReturn("Amri");
+    	System.out.println("loggingservice.getCircle().setNameandReturn => : "+loggingservice.getCircle().setNameandReturn("Old Value"));
+    	loggingservice.getTriangle().myTriangle();
     }
 }
